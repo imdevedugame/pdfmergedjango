@@ -1,96 +1,100 @@
-# Pseudofile - PDF Processing Cloud Service
+Berikut adalah versi bahasa Indonesia dari dokumentasi proyek **Pseudofile - Layanan Cloud Pemrosesan PDF**:
 
-Pseudofile is a cloud-based PDF processing service that allows users to convert, compress, merge, and store PDF files. The application is built with Streamlit for the frontend and uses Supabase for authentication, database, and storage.
+---
 
-## Features
+# Pseudofile - Layanan Cloud Pemrosesan PDF
 
-- **PDF Convert**: Convert various document formats (Word, images, text) to PDF
-- **PDF Compress**: Reduce PDF file size without significant quality loss
-- **PDF Merge**: Combine multiple PDF files into a single document
-- **PDF Pocket**: Store and manage processed PDF files in the cloud
-- **User Authentication**: Secure login and registration
-- **Usage Tracking**: Monitor and limit daily usage
-- **Billing Simulation**: Calculate costs based on usage
+**Pseudofile** adalah layanan cloud untuk memproses file PDF yang memungkinkan pengguna untuk mengonversi, mengompres, menggabungkan, dan menyimpan file PDF. Aplikasi ini dibangun menggunakan **Streamlit** untuk antarmuka frontend dan **Supabase** untuk otentikasi, basis data, dan penyimpanan.
 
-## Project Structure
+## Fitur
 
-\`\`\`
+* **Konversi PDF**: Mengonversi berbagai format dokumen (Word, gambar, teks) ke PDF
+* **Kompresi PDF**: Mengurangi ukuran file PDF tanpa kehilangan kualitas secara signifikan
+* **Gabung PDF**: Menggabungkan beberapa file PDF menjadi satu dokumen
+* **PDF Pocket**: Menyimpan dan mengelola file PDF yang telah diproses di cloud
+* **Otentikasi Pengguna**: Sistem login dan registrasi yang aman
+* **Pelacakan Penggunaan**: Memantau dan membatasi penggunaan harian
+* **Simulasi Penagihan**: Menghitung biaya berdasarkan penggunaan
+
+## Struktur Proyek
+
+```
 pseudofile/
-├── frontend/             # Streamlit UI components
-│   ├── app.py            # Main Streamlit application
-│   ├── pages/            # UI for different pages
-│   ├── components/       # Reusable UI components
-│   └── styles/           # CSS styles
-├── backend/              # Backend logic
-│   ├── auth.py           # Authentication functions
-│   ├── database.py       # Database interactions
-│   ├── storage.py        # File storage operations
-│   └── pdf/              # PDF processing functions
-├── database/             # Database schema and initialization
-├── .env                  # Environment variables (not in repo)
-├── .env.example          # Example environment variables
-├── requirements.txt      # Project dependencies
-└── main.py               # Application entry point
-\`\`\`
+├── frontend/             # Komponen UI Streamlit
+│   ├── app.py            # Aplikasi utama Streamlit
+│   ├── pages/            # UI untuk halaman-halaman berbeda
+│   ├── components/       # Komponen UI yang dapat digunakan kembali
+│   └── styles/           # Gaya CSS
+├── backend/              # Logika backend
+│   ├── auth.py           # Fungsi otentikasi
+│   ├── database.py       # Interaksi dengan database
+│   ├── storage.py        # Operasi penyimpanan file
+│   └── pdf/              # Fungsi pemrosesan PDF
+├── database/             # Skema dan inisialisasi database
+├── .env                  # Variabel lingkungan (tidak disimpan di repo)
+├── .env.example          # Contoh variabel lingkungan
+├── requirements.txt      # Dependensi proyek
+└── main.py               # Titik masuk aplikasi
+```
 
-## Setup Instructions
+## Instruksi Instalasi
 
-1. **Clone the repository**
+1. **Clone repositori**
 
-\`\`\`bash
+```bash
 git clone https://github.com/yourusername/pseudofile.git
 cd pseudofile
-\`\`\`
+```
 
-2. **Set up environment variables**
+2. **Atur variabel lingkungan**
 
-Copy the example environment file and update with your Supabase credentials:
+Salin file contoh variabel lingkungan dan sesuaikan dengan kredensial Supabase Anda:
 
-\`\`\`bash
+```bash
 cp .env.example .env
-# Edit .env with your credentials
-\`\`\`
+# Edit file .env dengan kredensial Anda
+```
 
-3. **Install dependencies**
+3. **Install dependensi**
 
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
-4. **Initialize the database**
+4. **Inisialisasi database**
 
-Run the database initialization script to set up the schema:
+Jalankan skrip inisialisasi database untuk membuat skema:
 
-\`\`\`bash
+```bash
 python database/init_db.py
-\`\`\`
+```
 
-5. **Run the application**
+5. **Jalankan aplikasi**
 
-\`\`\`bash
+```bash
 streamlit run main.py
-\`\`\`
+```
 
-## Supabase Setup
+## Pengaturan Supabase
 
-1. Create a new Supabase project
-2. Set up authentication with email/password
-3. Create the database tables using the SQL in `database/schema.sql`
-4. Create a storage bucket named "files" with public access
-5. Copy your Supabase URL and API key to the `.env` file
+1. Buat proyek baru di Supabase
+2. Aktifkan otentikasi dengan email/kata sandi
+3. Buat tabel database sesuai dengan SQL di `database/schema.sql`
+4. Buat bucket penyimpanan bernama "files" dengan akses publik
+5. Salin URL Supabase dan API key ke file `.env`
 
-## Usage Limits
+## Batasan Penggunaan
 
-- PDF Convert: 3 conversions per day
-- PDF Compress: 3 compressions per day
-- PDF Merge: 3 merges per day
+* Konversi PDF: Maksimal 3 kali per hari
+* Kompresi PDF: Maksimal 3 kali per hari
+* Gabung PDF: Maksimal 3 kali per hari
 
-## Billing
+## Simulasi Biaya
 
-- Conversions: Rp100 per operation
-- Compressions: Rp100 per operation
-- Merges: Rp200 per operation
+* Konversi: Rp100 per operasi
+* Kompresi: Rp100 per operasi
+* Gabung: Rp200 per operasi
 
-## License
+## Lisensi
+Mitha Yang Buat 
 
-This project is licensed under the MIT License - see the LICENSE file for details.
